@@ -8,15 +8,14 @@ categoria: Categoría a la que pertenece el producto (por ejemplo, bebidas, post
 """
 
 class Product():
-    id: int
+
     nombre: str
     descripcion: str
     precio: float
     imagenUrl: str
     categoria: str
 
-    def __init__(self, id, nombre, descripcion, precio, imagenUrl, categoria):
-        self.id = id
+    def __init__(self, nombre, descripcion, precio, imagenUrl, categoria):
         self.nombre = nombre
         self.descripcion = descripcion
         self.precio = precio
@@ -29,7 +28,6 @@ class Product():
     
     def to_dict(self):
         return {
-            "id": self.id,
             "nombre": self.nombre,
             "descripcion": self.descripcion,
             "precio": self.precio,
