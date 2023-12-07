@@ -52,12 +52,18 @@ To install and run Kofi Backend on your local environment, follow these steps:
 
 5. Run the Application:
    ```
-   flask --app app.py run
+   flask --app app.py run --port=8080
    ```
+>Note: Since macOS uses port 5000 for Airdrop, change the port to 8080 (or the one you prefer).   
 
 ## Usage
 
-Provide instructions on how to use the API, including endpoints and example requests, if applicable.
+- *[GET]* /products - Retrieve all products.
+- *[GET]* /product/<product_id> - Retrieve a specific product by its ID.
+- *[POST]* /product - Create a new product.
+- *[PATCH]* /product/<product_id> - Update a field value of an existing product by its ID.
+- *[PUT]* /product/<product_id> - Update an existing product by its ID.
+- *[DELETE]* /product/delete/<product_id> - Delete a product by its ID.
 
 ## Contributing
 
