@@ -1,39 +1,29 @@
-""" 
-id: Identificador único del producto (por ejemplo, un número o UUID).
-nombre: Nombre del producto.
-descripcion: Descripción detallada del producto.
-precio: Precio del producto.
-imagenUrl: URL de la imagen del producto.
-categoria: Categoría a la que pertenece el producto (por ejemplo, bebidas, postres).
-"""
-
 class Product():
     id: str
-    nombre: str
-    descripcion: str
-    precio: float
-    imagenUrl: str
-    categoria: str
+    name: str
+    description: str
+    price: float
+    image_url: str
+    category: str
 
-    def __init__(self, nombre, descripcion, precio, imagenUrl, categoria, id=None):
+    def __init__(self, name, description, price, image_url, category, id=None):
         self.id = id
-        self.nombre = nombre
-        self.descripcion = descripcion
-        self.precio = precio
-        self.imagenUrl = imagenUrl
-        self.categoria = categoria
+        self.name = name
+        self.description = description
+        self.price = price
+        self.image_url = image_url
+        self.category = category
 
     def __str__(self):
-        return f'Product: {self.nombre}'
-    
-    
+        return f'Product: {self.name.capitalize()}'
+
     def to_dict(self):
         product_dict = {
-            "nombre": self.nombre,
-            "descripcion": self.descripcion,
-            "precio": self.precio,
-            "imagenUrl": self.imagenUrl,
-            "categoria": self.categoria
+            "name": self.name,
+            "description": self.description,
+            "price": self.price,
+            "image_url": self.image_url,
+            "category": self.category
         }
         if self.id is not None:
             product_dict["id"] = self.id
