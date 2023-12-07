@@ -1,6 +1,5 @@
 from flask import Flask
-from endpoints.products.get_products import get_products
-from endpoints.products.add_product import add_product
+from endpoints.products import get_products, add_product, get_by_id
 
 app = Flask(__name__)
 
@@ -12,12 +11,10 @@ def hello_world():
 def get_orders():
     return ["order1", "order2", "order3"]
 
+# Products
 app.add_url_rule("/products", "get_products", get_products, methods=["GET"])
-
 app.add_url_rule("/products", "add_product", add_product, methods=["POST"])
-@app.get("/products/<int:id>")
-def get_product(id):
-    return "product " + str(id)
+app.add_url_rule("/products/<string:product_id>", "get_by_id", get_by_id, methods=["GET"])
 
 @app.put("/products/<int:id>")
 def update_product(id):
